@@ -60,7 +60,7 @@
     </table>
     <!-- 페이징처리 시작 -->
     <ul class="pagination justify-content-center">
-        <!-- 이전페이지 -->
+        <!-- 이전 페이지 -->
         {% if question_list.has_previous %}
         <li class="page-item">
             <a class="page-link" data-page="{{ question_list.previous_page_number }}" href="#">이전</a>
@@ -70,7 +70,7 @@
             <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
         </li>
         {% endif %}
-        <!-- 페이지리스트 -->
+        <!-- 페이지 리스트 -->
         {% for page_number in question_list.paginator.page_range %}
         {% if page_number >= question_list.number|add:-5 and page_number <= question_list.number|add:5 %}
             {% if page_number == question_list.number %}
@@ -85,7 +85,7 @@
         {% endif %}
 
         {% endfor %}
-        <!-- 다음페이지 -->
+        <!-- 다음 페이지 -->
         {% if question_list.has_next %}
         <li class="page-item">
             <a class="page-link" data-page="{{ question_list.next_page_number }}" href="#">다음</a>
@@ -115,7 +115,7 @@ $(document).ready(function(){
 
     $("#btn_search").on('click', function() {
         $("#kw").val($(".kw").val());
-        $("#page").val(1);  // 검색버튼을 클릭할 경우 1페이지부터 조회한다.
+        $("#page").val(1); <!-- 검색버튼을 클릭할 경우 1페이지부터 조회한다. -->
         $("#searchForm").submit();
     });
 
