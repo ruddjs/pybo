@@ -1,13 +1,13 @@
 {% load static %}
-<!doctype html>
+<!doctype html> <!-- 표시는 에러 라고 뜨지만 실행은 아무 문제가 없다. -->
 <html lang="ko">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
+    <!-- 부트스크랩 CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
-    <!-- pybo CSS -->
+    <!-- 파이보 CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <title>Hello, pybo!</title>
 </head>
@@ -19,7 +19,7 @@
 <!-- 기본 템플릿 안에 삽입될 내용 End -->
 <!-- jQuery JS -->
 <script src="{% static 'jquery-3.4.1.min.js' %}"></script>
-<!-- Bootstrap JS -->
+<!-- 부트스크랩 JS -->
 <script src="{% static 'bootstrap.min.js' %}"></script>
 <!-- 자바스크립트 Start -->
 {% block script %}

@@ -20,7 +20,7 @@ def index(request):
     page_obj = paginator.get_page(page)
     context = {'question_list': page_obj}
     return render(request, 'pybo/question_list.html',context)
-    return HttpResponse("안녕하세요 pybo에 오신것을 환영합니다.")
+    return HttpResponse("안녕하세요! pybo에 오신것을 환영합니다.")
 
 def detail(request, question_id):
     """
@@ -30,7 +30,8 @@ def detail(request, question_id):
     context = {'question': question}
     return  render(request,'pybo/question_detail.html', context)
 
-@login_required(login_url='common:login') #로그인이 안되어 있으면 로그인 페이지로 먼저 이동 시키기
+@login_required(login_url='common:login')
+#로그인이 안되어 있으면 로그인 페이지로 먼저 이동 시키기
 def answer_create(request, question_id):
 
     """
@@ -259,7 +260,3 @@ def comment_delete_answer(request, comment_id):
         comment.delete()
     return redirect('pybo:detail', question_id=comment.answer.question_id)
 
-
-
-
-# Create your views here.
