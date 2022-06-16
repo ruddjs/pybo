@@ -22,6 +22,9 @@ class Answer(models.Model):
     modify_date = models.DateTimeField(null=True, blank=True)
     voter = models.ManyToManyField(User, related_name='voter_answer')
 
+    def get_recent_comments(self):
+        return self.comment_set.all().order_by('-create_date')[:5]
+
 
 class Comment(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
